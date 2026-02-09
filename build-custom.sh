@@ -8,7 +8,7 @@ rm ./bluez-4.101.tar.xz
 # apply patch (to disable sdp server) and build bluez
 cd bluez-4.101
 mkdir dist
-DIST=$(pwd)/dist
+set DIST $(pwd)/dist
 cp ../bluez-disable-sdp.patch .
 patch -p0 < bluez-disable-sdp.patch
 ./configure --prefix=$DIST --with-systemdunitdir=$DIST/system --disable-service --disable-audio --disable-input --disable-serial
